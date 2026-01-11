@@ -167,3 +167,64 @@ function trueOrFalse(val){
   if (Boolean(val))    return "true";             
   else     return "false";
 }
+
+/*
+  Training JS #5: Basic data types--Object
+*/
+
+
+function animal(obj){
+  return "This " + obj.color + " " + obj.name + " " +  "has" +  " " + obj.legs + " " + "legs.";
+}
+
+const { assert } = require('chai');
+
+describe("Example tests", () => {
+  it("white dog with 4 legs", () => {
+    assert.strictEqual(animal({ name: "dog", legs: 4, color: "white" }), "This white dog has 4 legs.");
+  });
+
+  it("red cock with 2 legs", () => {
+    assert.strictEqual(animal({ name: "cock", legs: 2, color: "red" }), "This red cock has 2 legs.");
+  });
+
+  it("gray rabbit with 4 legs", () => {
+    assert.strictEqual(animal({ name: "rabbit", legs: 4, color: "gray" }), "This gray rabbit has 4 legs.");
+  });
+});
+
+
+/*
+  Training JS #7: if..else and ternary operator
+*/
+
+// IF ELSE 
+
+function saleHotdogs(n){
+  if(n < 5) {
+    return n * 100;
+  }else if(n >= 5 && n < 10){
+    return n * 95;
+  }else {
+   return n * 90; 
+  }
+}
+
+// OR WITH ternary operator
+
+function saleHotdogs(n){
+  return n < 5 ? n * 100 : n >= 5 && n < 10 ? n * 95 : n * 90;
+}
+
+const { assert } = require('chai');
+
+describe("Tests", () => {
+  it("Sample tests", () => {
+    assert.strictEqual(saleHotdogs(  1),  100);
+    assert.strictEqual(saleHotdogs(  4),  400);
+    assert.strictEqual(saleHotdogs(  5),  475);
+    assert.strictEqual(saleHotdogs(  9),  855);
+    assert.strictEqual(saleHotdogs( 10),  900);
+    assert.strictEqual(saleHotdogs(100), 9000);
+  });
+});
