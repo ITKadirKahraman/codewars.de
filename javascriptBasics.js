@@ -375,10 +375,36 @@ function pickIt(arr){
 }
 
 /*
-  Training JS #10: loop statement --for
+ Training JS #11: loop statement --break,continue
 */
 
+const assert = require('chai').assert;
 
+describe("Tests", () => {
+  it("test", () => {
+    assert.deepEqual(grabDoll(["Mickey Mouse", "Hello Kitty", "Snow white"]), ["Hello Kitty"]);
+    assert.deepEqual(grabDoll(["Mickey Mouse", "Hello Kitty", "Hello Kitty", "Snow white"]), ["Hello Kitty", "Hello Kitty"]);
+    assert.deepEqual(grabDoll(["Mickey Mouse", "Hello Kitty", "Hello Kitty", "Barbie doll", "Snow white"]), ["Hello Kitty", "Hello Kitty", "Barbie doll"]);
+    assert.deepEqual(grabDoll(["Mickey Mouse", "Barbie doll", "Hello Kitty", "Hello Kitty", "Hello Kitty", "Snow white"]), ["Barbie doll", "Hello Kitty", "Hello Kitty"]);
+  });
+});
+
+
+function grabDoll(dolls){
+  var bag=[];
+  //coding here
+  for(let i = 0; i < dolls.length; i++){
+    if(dolls[i] !== 'Hello Kitty' && dolls[i] !== 'Barbie doll'){
+      continue;
+    }
+    bag.push(dolls[i]);
+    
+    if(bag.length === 3){
+      break;
+    }
+  }
+  return bag;
+}
 
 /*
   Training JS #10: loop statement --for
