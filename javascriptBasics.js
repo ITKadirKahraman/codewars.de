@@ -320,3 +320,72 @@ function padIt(str,n){
   }
   return str;
 }
+
+/*
+  Training JS #10: loop statement --for
+*/
+
+const chai = require('chai');
+const assert = chai.assert;
+chai.config.truncateThreshold = 0;
+
+describe('Sample Tests', () => {
+  it('Test', () => {
+    tester([1,2]          , [ [1]       , [2] ]       );
+    tester([1,2,3]        , [ [1,3]     , [2] ]       );
+    tester([3,2,1]        , [ [3,1]     , [2] ]       );
+    tester([10,20,30]     , [ []        , [10,20,30] ]);
+    tester([11,21,31]     , [ [11,21,31], [] ]        );
+    tester([8,1,5,4,6,1,1], [ [1,5,1,1] , [8,4,6] ]   );
+  });
+});
+
+  function tester(arr, expected) {
+      const err_msg = `Testing for ${JSON.stringify(arr)}\n\n`;
+      const before = [...arr];
+      const actual = pickIt(arr);
+      assert.deepEqual(actual, expected, err_msg);
+      assert.deepEqual(arr, before, "Input array must not be modified");
+  }
+
+// for loop and if statement
+
+function pickIt(arr){
+  let odd = [], even = [];
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] % 2 === 0){
+      even.push(arr[i]);
+    }else{
+      odd.push(arr[i]);
+    }
+  }
+  
+  return [odd,even];
+}
+
+// OR WITH ternary operator
+
+function pickIt(arr){
+  let odd = [], even = [];
+  for(let i = 0; i < arr.length; i++){
+    arr[i] % 2 === 0 ? even.push(arr[i]) : odd.push(arr[i]);
+  }
+  
+  return [odd,even];
+}
+
+/*
+  Training JS #10: loop statement --for
+*/
+
+
+
+/*
+  Training JS #10: loop statement --for
+*/
+
+
+
+/*
+  Training JS #10: loop statement --for
+*/
