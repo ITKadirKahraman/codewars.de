@@ -407,10 +407,31 @@ function grabDoll(dolls){
 }
 
 /*
-  Training JS #10: loop statement --for
+  Training JS #12: loop statement --for..in and for..of
 */
 
+describe("Tests", () => {
+  it("test", () => {
+    Test.assertSimilar(giveMeFive({Our:"earth",is:"a",beautyful:"world"}),["earth","world"]);
+    Test.assertSimilar(giveMeFive({Ihave:"enough", money:"to",buy:"a",car:"model"}),["Ihave","money","model"]);
+    Test.assertSimilar(giveMeFive({Pears:"than",apple:"sweet"}),["Pears","apple","sweet"]);
 
+  });
+});
+
+function giveMeFive(obj){
+  let result = [];
+  for(let key in obj){
+    if(key.length === 5){
+      result.push(key);
+    }
+    
+    if(obj[key].length === 5){
+      result.push(obj[key]);
+    }
+  }
+  return result;
+}
 
 /*
   Training JS #10: loop statement --for
