@@ -434,5 +434,5 @@ function giveMeFive(obj){
 }
 
 /*
-  Training JS #10: loop statement --for
+  Training JS #13: Number object and its properties
 */
