@@ -436,3 +436,35 @@ function giveMeFive(obj){
 /*
   Training JS #13: Number object and its properties
 */
+
+/*
+  Training JS #16: Methods of String object--slice(), substring() and substr()
+*/
+
+const { assert, config } = require('chai');
+config.truncateThreshold = 0;
+
+describe("Tests", () => {
+  it("test", () => {
+    assert.deepEqual(cutIt(["ab","cde","fgh"]) , ["ab","cd","fg"]);
+    assert.deepEqual(cutIt(["abc","defgh","ijklmn"]) , ["abc","def","ijk"]);
+    assert.deepEqual(cutIt(["codewars","javascript","java"]) , ["code","java","java"]);
+  });
+});
+
+
+function cutIt(arr){
+  //coding here...
+  let short = arr[0];
+  let ar = [];
+  for(let i = 0; i < arr.length; i++){
+    if(short.length > arr[i].length){
+      short = arr[i];
+    }
+  }
+  
+  for(let i = 0; i < arr.length; i++){
+    ar.push(arr[i].slice(0,short.length));
+  }
+  return ar;
+}
