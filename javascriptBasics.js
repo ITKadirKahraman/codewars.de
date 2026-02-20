@@ -468,3 +468,58 @@ function cutIt(arr){
   }
   return ar;
 }
+
+
+/*
+  Training JS #17: Methods of String object--indexOf(), lastIndexOf() and search()
+*/
+
+describe("Tests", () => {
+  it("test", () => {
+    Test.assertSimilar(firstToLast("ababc","a") , 2);
+    Test.assertSimilar(firstToLast("ababc","c") , 0);
+    Test.assertSimilar(firstToLast("ababc","d") , -1);
+  });
+});
+
+function firstToLast(str,c){
+  //coding here..
+  let first = str.indexOf(c);
+  let last = str.lastIndexOf(c);
+  
+  if(first === -1){
+    return -1;
+  }
+  
+  if(first === last){
+    return 0;
+  }
+  
+  return last - first;
+}
+
+// OR 
+
+function firstToLast(str,c){
+  //coding here..
+  let first = str.indexOf(c);
+  let last = str.lastIndexOf(c);
+  return first === -1 ? -1 : first === last ? 0 : last - first;
+}
+
+/*
+  Training JS #18: Methods of String object--concat() split() and its good friend join()
+*/
+
+const chai = require("chai");
+const assert = chai.assert;
+chai.config.truncateThreshold=0;
+
+describe("Sample Tests", () => {
+  it("Should pass sample tests", () => {
+    assert.strictEqual(splitAndMerge("My name is John"," ") , "M y n a m e i s J o h n");
+    assert.strictEqual(splitAndMerge("My name is John","-") , "M-y n-a-m-e i-s J-o-h-n");
+    assert.strictEqual(splitAndMerge("Hello World!",".") , "H.e.l.l.o W.o.r.l.d.!");
+    assert.strictEqual(splitAndMerge("Hello World!",",") , "H,e,l,l,o W,o,r,l,d,!");
+  });
+});
