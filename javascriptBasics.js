@@ -523,3 +523,16 @@ describe("Sample Tests", () => {
     assert.strictEqual(splitAndMerge("Hello World!",",") , "H,e,l,l,o W,o,r,l,d,!");
   });
 });
+
+
+function splitAndMerge(string, separator) {
+  let newWords = []; 
+  let words = string.split(" ");
+  for(let i = 0; i < words.length; i++){
+    let n = words[i].split("");
+    let newWord = n.join(separator);
+    newWords.push(newWord);
+  }
+  let result = newWords.join(" ");
+  return result;
+}
